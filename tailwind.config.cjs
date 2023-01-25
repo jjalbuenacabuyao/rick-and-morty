@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         "schwifty": ["Get Schwifty", "sans-serif"],
         "roboto": ["Roboto", "sans-serif"],
+      },
+      colors: {
+        "custom-black": "#242424",
       }
     },
   },
