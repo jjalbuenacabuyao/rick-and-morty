@@ -8,7 +8,7 @@ const Header = () => {
   const [dark, setDark] = useState(isDark);
   const [open, setOpen] = useState(false);
   const iconClass = `material-icons-outlined ${
-    dark ? "text-gray-50" : "text-gray-900"
+    dark ? "text-white/80" : "text-custom-black"
   }`;
 
   function toggleColorTheme() {
