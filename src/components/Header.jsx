@@ -20,7 +20,7 @@ const Header = () => {
     <header className="p-6 flex justify-between items-center gap-2">
       <div className="flex justify-between w-full items-center">
         <Link to={"/"}>
-          <p className="font-schwifty text-lg font-bold">
+          <p className="font-schwifty text-lg">
             R<span className="text-xs">ick</span>{" "}
             <span className="text-[8px]">and</span> M
             <span className="text-xs">orty</span>
