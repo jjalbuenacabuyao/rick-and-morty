@@ -18,27 +18,27 @@ const Header = () => {
   const links = [
     {
       id: "Home",
-      link: "/"
+      link: "/",
     },
     {
       id: "Characters",
-      link: "/characters"
+      link: "/characters",
     },
     {
       id: "Episodes",
-      link: "/episodes"
+      link: "/episodes",
     },
     {
       id: "Locations",
-      link: "/locations"
-    }
-  ]
+      link: "/locations",
+    },
+  ];
 
   const listItems = links.map((link) => (
     <li key={link.id}>
       <Link to={link.link}>{link.id}</Link>
     </li>
-  ))
+  ));
 
   return (
     <header className="p-6 flex justify-between items-center gap-2">
@@ -64,9 +64,7 @@ const Header = () => {
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <ul>
-          {listItems}
-        </ul>
+        <ul>{listItems}</ul>
       </nav>
     </header>
   );
