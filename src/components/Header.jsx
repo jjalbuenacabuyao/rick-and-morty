@@ -15,6 +15,31 @@ const Header = () => {
     rootElementClassList.toggle("dark");
   }
 
+  const links = [
+    {
+      id: "Home",
+      link: "/"
+    },
+    {
+      id: "Characters",
+      link: "/characters"
+    },
+    {
+      id: "Episodes",
+      link: "/episodes"
+    },
+    {
+      id: "Locations",
+      link: "/locations"
+    }
+  ]
+
+  const listItems = links.map((link) => (
+    <li key={link.id}>
+      <Link to={link.link}>{link.id}</Link>
+    </li>
+  ))
+
   return (
     <header className="p-6 flex justify-between items-center gap-2">
       <div className="flex justify-between w-full items-center">
@@ -40,7 +65,8 @@ const Header = () => {
         }`}
       >
         <ul>
-          <li>
+          {listItems}
+          {/* <li>
             <Link to={"/"}>Home</Link>
           </li>
           <li>
@@ -51,7 +77,7 @@ const Header = () => {
           </li>
           <li>
             <Link to={"/locations"}>Locations</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
