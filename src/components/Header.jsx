@@ -66,18 +66,6 @@ const Header = () => {
       >
         <ul>
           {listItems}
-          {/* <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"/characters"}>Characters</Link>
-          </li>
-          <li>
-            <Link to={"/episodes"}>Epsodes</Link>
-          </li>
-          <li>
-            <Link to={"/locations"}>Locations</Link>
-          </li> */}
         </ul>
       </nav>
     </header>
