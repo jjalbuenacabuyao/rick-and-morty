@@ -2,18 +2,22 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const rootElementClassList = document.documentElement.classList;
-  const isDark = rootElementClassList.contains("dark") ? true : false;
-  const [dark, setDark] = useState(isDark);
+  const currentTheme = document.documentElement.classList.contains("dark")
+    ? "dark"
+    : "light";
+  const [theme, setTheme] = useState(currentTheme);
   const [open, setOpen] = useState(false);
   const iconClass = `material-icons-outlined ${
-    dark ? "text-white/80" : "text-custom-black"
+    theme === "dark" ? "text-white/80" : "text-custom-black"
   }`;
 
   function toggleColorTheme() {
-    setDark(!dark);
-    rootElementClassList.toggle("dark");
+    setTheme(theme === "dark" ? "light" : "dark");
   }
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme]);
 
   const links = [
     {
@@ -41,8 +45,8 @@ const Header = () => {
   ));
 
   return (
-    <header className="p-6 flex justify-between items-center gap-2">
-      <div className="flex justify-between w-full items-center">
+    <header className="flex items-center justify-between gap-2 p-6">
+      <div className="flex w-full items-center justify-between">
         <Link to={"/"}>
           <p className="font-schwifty text-lg">
             R<span className="text-xs">ick</span>{" "}
@@ -51,7 +55,9 @@ const Header = () => {
           </p>
         </Link>
         <button onClick={toggleColorTheme} className="z-0 flex">
-          <span className={iconClass}>{dark ? `light_mode` : `dark_mode`}</span>
+          <span className={iconClass}>
+            {theme === "dark" ? `light_mode` : `dark_mode`}
+          </span>
         </button>
       </div>
 
@@ -60,7 +66,7 @@ const Header = () => {
       </button>
 
       <nav
-        className={`z-10 bg-slate-100 dark:bg-gray-800 fixed inset-y-0 right-0 w-2/3 transition-all ${
+        className={`fixed inset-y-0 right-0 z-10 w-2/3 bg-slate-100 transition-all dark:bg-gray-800 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
