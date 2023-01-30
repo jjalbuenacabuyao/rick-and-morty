@@ -45,7 +45,7 @@ const Header = () => {
   ));
 
   return (
-    <header className="flex items-center justify-between gap-2 p-6">
+    <header className="absolute right-0 left-0 top-0 flex items-center justify-between gap-2 p-6">
       <div className="flex w-full items-center justify-between">
         <Link to={"/"}>
           <p className="font-schwifty text-lg">
