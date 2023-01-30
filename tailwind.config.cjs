@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         "schwifty": ["Get Schwifty", "sans-serif"],
-        "roboto": ["Roboto", "sans-serif"],
+        "poppins": ["Poppins", "sans-serif"],
       },
       colors: {
         "custom-black": "#242424",
