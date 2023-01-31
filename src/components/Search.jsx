@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = ({ setFilters }) => {
+const Search = ({ filters, setFilters }) => {
   return (
     <form>
       <label htmlFor="search" className="relative block">

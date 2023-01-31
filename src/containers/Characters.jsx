@@ -27,6 +27,7 @@ const Characters = () => {
       setPage={setPage}
       apiData={apiData}
       setFilters={setFilters}
+      filters={filters}
     />
   );
 };
