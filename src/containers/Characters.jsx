@@ -1,39 +1,33 @@
 import React, { useEffect, useState } from "react";
-import {Header, Showcase, Filter} from "../components";
+import { Box } from "../components";
 
 const Characters = () => {
-  const [page, setPage] = useState(1)
-  const [apiData, setApiData] = useState([])
-  const [filters, setFilters] = useState({})
-  const apiURL = `https://rickandmortyapi.com/api/character/?page=${page}`;
-  
+  const sectionTitle = "Characters"
+  const [page, setPage] = useState(1);
+  const [apiData, setApiData] = useState([]);
+  const [filters, setFilters] = useState({
+    name: "",
+    status: "",
+    species: "",
+    gender: "",
+  });
+  const apiURL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${filters.name}&status=${filters.status}&species=${filters.species}&gender=${filters.gender}`;
+
   useEffect(() => {
-    (async function(){
-      const response = await fetch(apiURL)
-      const data = await response.json()
-      setApiData(data)
-    })()
-  })
+    (async function () {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+      setApiData(data);
+    })();
+  });
 
   return (
-    <>
-      <Header />
-      <div>
-        <h1>Characters</h1>
-
-        <form>
-          <input type="text" />
-          <button>
-            <span className="material-icons text-gray-900 dark:text-gray-50">search</span>
-          </button>
-        </form>
-
-        <div>
-          <Filter setFilters={setFilters} />
-          <Showcase filters={filters} />
-        </div>
-      </div>
-    </>
+    <Box 
+      title={sectionTitle}
+      setPage={setPage}
+      apiData={apiData}
+      setFilters={setFilters}
+    />
   );
 };
 
