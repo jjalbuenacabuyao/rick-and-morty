@@ -17,7 +17,7 @@ const Showcase = ({ apiData }) => {
                 character.status === "Alive"
                   ? "before:bg-green-500"
                   : "before:bg-red-500"
-              }`}
+              } before:animate-pulse`}
             >
               {character.status}
             </p>
