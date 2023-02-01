@@ -6,10 +6,12 @@ const Showcase = ({ apiData }) => {
   ) : (
     <div className="grid grid-cols-2 gap-4">
       {apiData.map((character) => (
+        // Main Container
         <div
           key={character.id}
           className="rounded-md border-[1px] border-gray-700 text-sm overflow-hidden"
         >
+          {/* Image and Status */}
           <div className="relative">
             <img src={character.image} alt="" className=" w-full" />
             <p
