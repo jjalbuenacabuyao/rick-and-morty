@@ -11,7 +11,7 @@ const Showcase = ({ apiData }) => {
           className="rounded-md border-[1px] border-gray-700 text-sm"
         >
           <div className="relative">
-            <img src={character.image} alt="" className="rounded-t-md" />
+            <img src={character.image} alt="" className="rounded-t-md w-full" />
             <p
               className={`absolute top-3 right-3 rounded-full bg-gray-800 py-1 pl-5 pr-2 text-[0.625rem] capitalize leading-none text-gray-50 before:absolute before:left-[6px] before:top-0 before:bottom-0 before:my-auto before:block before:aspect-square before:w-[6px] before:rounded-full ${
                 character.status === "Alive"
