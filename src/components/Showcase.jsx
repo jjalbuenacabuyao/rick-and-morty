@@ -23,7 +23,7 @@ const Showcase = ({ apiData }) => {
             </p>
           </div>
           <div className="flex flex-col gap-2 px-3 py-4">
-            <p className="text-base font-bold leading-none">{character.name}</p>
+            <p className="text-base font-bold leading-none dark:text-sky-500">{character.name}</p>
             <p className="text-xs leading-none">
               Gender:{" "}
               <span className="rounded-full bg-gray-900 px-2 py-[1px] text-[0.625rem] text-gray-50 dark:bg-gray-50 dark:text-gray-900">
