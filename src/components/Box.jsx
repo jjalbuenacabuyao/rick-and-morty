@@ -11,7 +11,7 @@ const Box = ({title, setPage, apiData, filters, setFilters}) => {
 
         <div>
           <Filter setFilters={setFilters} />
-          <Showcase apiData={apiData} />
+          <Showcase apiData={apiData} filters={filters} />
         </div>
       </div>
     </>
