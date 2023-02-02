@@ -115,7 +115,7 @@ const Filter = ({ filters, setFilters }) => {
       <button
         aria-expanded={collapse}
         onClick={() => setCollapse(!collapse)}
-        className={`flex items-center justify-between gap-2 rounded-md  border-gray-900 px-3 py-1`}
+        className="flex items-center justify-between gap-2 px-3 py-1"
       >
         <span className="text-sm leading-none">Filters</span>
         <span className="material-icons-outlined">
