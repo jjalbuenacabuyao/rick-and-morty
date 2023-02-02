@@ -45,6 +45,7 @@ const Hero = () => {
       <ul className="flex justify-center gap-2">{listItems}</ul>
       <a
         href="https://github.com/jjalbuenacabuyao/rick-and-morty"
+        target="_blank"
         className="flex items-center gap-4 rounded-md bg-gray-900 py-2 px-4 text-[10px] uppercase leading-none text-gray-50 dark:bg-gray-800"
       >
         <span>Source Code</span>
