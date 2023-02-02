@@ -17,6 +17,8 @@ const Showcase = ({ apiData }) => {
           {/* Image and Status */}
           <div className="relative">
             <img src={character.image} alt="" className=" w-full" />
+
+            {/* Status (Alive, Dead, Unknown) */}
             <p
               className={`absolute top-3 right-3 rounded-full bg-gray-800 py-1 pl-5 pr-2 text-[0.625rem] capitalize leading-none text-gray-50 before:absolute before:left-[6px] before:top-0 before:bottom-0 before:my-auto before:block before:aspect-square before:w-[6px] before:rounded-full ${
                 character.status === "Alive"
@@ -30,19 +32,28 @@ const Showcase = ({ apiData }) => {
 
           {/* Informations */}
           <div className="flex flex-col gap-3 px-3 py-4">
-            <p className="text-base font-bold leading-none dark:text-sky-500">{character.name}</p>
+            {/* Name */}
+            <p className="text-base font-bold leading-none dark:text-sky-500">
+              {character.name}
+            </p>
+
+            {/* Gender */}
             <p className={label}>
               Gender:{" "}
               <span className={pill}>
                 {character.gender}
               </span>
             </p>
+
+            {/* Species */}
             <p className={label}>
               Species:{" "}
               <span className={pill}>
                 {character.species}
               </span>
             </p>
+
+            {/* Location */}
             <p className={label}>
               Location: {character.location.name}
             </p>
