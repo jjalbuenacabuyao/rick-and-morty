@@ -2,7 +2,7 @@ import React from "react";
 
 const Showcase = ({ apiData }) => {
   const pill = "rounded-full bg-gray-900 px-2 py-[1px] text-[0.625rem] text-gray-50 dark:bg-gray-50 dark:text-gray-900 capitalize";
-  const label = "text-xs leading-none"
+  const label = "text-xs leading-none capitalize"
 
   return apiData === undefined ? (
     <span className="block text-center">Character doesn't exist</span>
@@ -49,7 +49,7 @@ const Showcase = ({ apiData }) => {
             <p className={label}>
               Species:{" "}
               <span className={pill}>
-                {character.species}
+                {character.species === "Mythological Creature" ? `Mythological` : character.species}
               </span>
             </p>
 
