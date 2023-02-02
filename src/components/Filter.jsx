@@ -129,7 +129,7 @@ const Filter = ({ filters, setFilters }) => {
           collapse
             ? "opacity-animation h-auto rounded-lg border-[1px] border-gray-400 p-4"
             : "h-0"
-        } flex flex-col gap-5 bg-gray-100 dark:bg-gray-500`}
+        } flex flex-col gap-5 bg-gray-100 dark:bg-gray-500 mt-2`}
       >
         {fieldsets}
       </form>
