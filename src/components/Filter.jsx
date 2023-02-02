@@ -27,14 +27,19 @@ const Filter = ({ filters, setFilters }) => {
 
   const fieldsets = filterTags.map((filter) => (
     // Map each items in the array and creates fieldset. Inside the fieldset is a paragraph containing and the generated labels from choices object.
-    <fieldset key={filter} className="flex gap-3 flex-wrap capitalize items-center">
+    <fieldset
+      key={filter}
+      className="flex flex-wrap items-center gap-3 capitalize"
+    >
       <p className="text-lg font-bold leading-none">{filter}:</p>
       {filter === "status"
         ? choices.status.map((status) => (
             <label
               key={status}
               className={`${
-                statusSelected === status ? "text-gray-50 bg-gray-800 rounded-full text-sm" : ""
+                statusSelected === status
+                  ? "rounded-full bg-gray-800 text-sm text-gray-50"
+                  : ""
               } px-2 py-1`}
             >
               <span>{status}</span>
@@ -57,7 +62,9 @@ const Filter = ({ filters, setFilters }) => {
             <label
               key={gender}
               className={`${
-                genderSelected === gender ? "text-gray-50 bg-gray-800 rounded-full text-sm" : ""
+                genderSelected === gender
+                  ? "rounded-full bg-gray-800 text-sm text-gray-50"
+                  : ""
               } px-2 py-1`}
             >
               <span>{gender}</span>
@@ -79,7 +86,9 @@ const Filter = ({ filters, setFilters }) => {
             <label
               key={species}
               className={`${
-                speciesSelected === species ? "text-gray-50 bg-gray-800 rounded-full text-sm" : ""
+                speciesSelected === species
+                  ? "rounded-full bg-gray-800 text-sm text-gray-50"
+                  : ""
               } px-2 py-1`}
             >
               <span>{species}</span>
@@ -106,7 +115,10 @@ const Filter = ({ filters, setFilters }) => {
       <button
         aria-expanded={collapse}
         onClick={() => setCollapse(!collapse)}
-      className={`flex items-center justify-between gap-2 rounded-md  border-gray-900 px-3 py-1 ${collapse ? "border-2" : "border-[1px]"}`}
+        className={`flex items-center justify-between gap-2 rounded-md  border-gray-900 px-3 py-1 
+        ${
+          collapse ? "border-2" : "border-[1px]"
+        }`}
       >
         <span className="text-sm leading-none">Filters</span>
         <span className="material-icons-outlined">
@@ -115,7 +127,15 @@ const Filter = ({ filters, setFilters }) => {
       </button>
 
       {/* Filters */}
-      <form className={`overflow-hidden ${collapse ? "h-auto opacity-animation rounded-lg p-2 border-gray-400 border-[1px]" : "h-0"} bg-gray-100 flex flex-col gap-5 absolute top-10 right-0 left-0 z-10`}>{fieldsets}</form>
+      <form
+        className={`overflow-hidden ${
+          collapse
+            ? "opacity-animation h-auto rounded-lg border-[1px] border-gray-400 p-2"
+            : "h-0"
+        } absolute top-10 right-0 left-0 z-10 flex flex-col gap-5 bg-gray-100`}
+      >
+        {fieldsets}
+      </form>
     </div>
   );
 };
