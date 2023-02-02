@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 const Filter = ({ filters, setFilters }) => {
   const [collapse, setCollapse] = useState(false);
-  const [statusSelected, setStatusSelected] = useState("unset");
-  const [genderSelected, setGenderSelected] = useState("unset");
-  const [speciesSelected, setSpeciesSelected] = useState("unset");
+  const [statusSelected, setStatusSelected] = useState("none");
+  const [genderSelected, setGenderSelected] = useState("none");
+  const [speciesSelected, setSpeciesSelected] = useState("none");
   const filterTags = ["status", "gender", "species"];
   const choices = {
-    status: ["alive", "dead", "unknown", "unset"],
-    gender: ["male", "female", "unknown", "unset"],
+    status: ["alive", "dead", "unknown", "none"],
+    gender: ["male", "female", "unknown", "none"],
     species: [
       "human",
       "alien",
@@ -21,7 +21,7 @@ const Filter = ({ filters, setFilters }) => {
       "robot",
       "cronenberg",
       "planet",
-      "unset",
+      "none",
     ],
   };
 
@@ -31,14 +31,14 @@ const Filter = ({ filters, setFilters }) => {
       key={filter}
       className="flex flex-wrap items-center gap-3 capitalize"
     >
-      <p className="text-lg font-bold leading-none">{filter}:</p>
+      <p className="text-base font-bold leading-none">{filter}:</p>
       {filter === "status"
         ? choices.status.map((status) => (
             <label
               key={status}
               className={`${
                 statusSelected === status
-                  ? "rounded-full bg-gray-800 text-sm text-gray-50"
+                  ? "rounded-full bg-gray-800 text-sm text-gray-50 dark:bg-sky-500"
                   : ""
               } px-2 py-1`}
             >
@@ -50,7 +50,7 @@ const Filter = ({ filters, setFilters }) => {
                 value={status}
                 onChange={(e) => {
                   setStatusSelected(e.target.value);
-                  status === "unset"
+                  status === "none"
                     ? setFilters({ ...filters, status: "" })
                     : setFilters({ ...filters, status: e.target.value });
                 }}
@@ -63,7 +63,7 @@ const Filter = ({ filters, setFilters }) => {
               key={gender}
               className={`${
                 genderSelected === gender
-                  ? "rounded-full bg-gray-800 text-sm text-gray-50"
+                  ? "rounded-full bg-gray-800 text-sm text-gray-50 dark:bg-sky-500"
                   : ""
               } px-2 py-1`}
             >
@@ -75,7 +75,7 @@ const Filter = ({ filters, setFilters }) => {
                 value={gender}
                 onChange={(e) => {
                   setGenderSelected(e.target.value);
-                  gender === "unset"
+                  gender === "none"
                     ? setFilters({ ...filters, gender: "" })
                     : setFilters({ ...filters, gender: e.target.value });
                 }}
@@ -87,7 +87,7 @@ const Filter = ({ filters, setFilters }) => {
               key={species}
               className={`${
                 speciesSelected === species
-                  ? "rounded-full bg-gray-800 text-sm text-gray-50"
+                  ? "rounded-full bg-gray-800 text-sm text-gray-50 dark:bg-sky-500"
                   : ""
               } px-2 py-1`}
             >
@@ -99,7 +99,7 @@ const Filter = ({ filters, setFilters }) => {
                 value={species}
                 onChange={(e) => {
                   setSpeciesSelected(e.target.value);
-                  species === "unset"
+                  species === "none"
                     ? setFilters({ ...filters, species: "" })
                     : setFilters({ ...filters, species: e.target.value });
                 }}
@@ -110,15 +110,12 @@ const Filter = ({ filters, setFilters }) => {
   ));
 
   return (
-    <div className="relative">
+    <div>
       {/* Toggle Button */}
       <button
         aria-expanded={collapse}
         onClick={() => setCollapse(!collapse)}
-        className={`flex items-center justify-between gap-2 rounded-md  border-gray-900 px-3 py-1 
-        ${
-          collapse ? "border-2" : "border-[1px]"
-        }`}
+        className={`flex items-center justify-between gap-2 rounded-md  border-gray-900 px-3 py-1`}
       >
         <span className="text-sm leading-none">Filters</span>
         <span className="material-icons-outlined">
@@ -130,9 +127,9 @@ const Filter = ({ filters, setFilters }) => {
       <form
         className={`overflow-hidden ${
           collapse
-            ? "opacity-animation h-auto rounded-lg border-[1px] border-gray-400 p-2"
+            ? "opacity-animation h-auto rounded-lg border-[1px] border-gray-400 p-4"
             : "h-0"
-        } absolute top-10 right-0 left-0 z-10 flex flex-col gap-5 bg-gray-100`}
+        } flex flex-col gap-5 bg-gray-100 dark:bg-gray-500`}
       >
         {fieldsets}
       </form>
