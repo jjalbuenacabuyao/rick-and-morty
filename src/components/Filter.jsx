@@ -122,7 +122,7 @@ const Filter = ({ filters, setFilters }) => {
       >
         <span className="text-sm leading-none">Filters</span>
         <span className="material-icons-outlined">
-          {collapse ? `keyboard_arrow_up` : `keyboard_arrow_down`}
+          {collapse ? `arrow_drop_up` : `arrow_drop_down`}
         </span>
       </button>
 
