@@ -108,7 +108,7 @@ const Filter = ({ filters, setFilters }) => {
       <button
         aria-expanded={collapse}
         onClick={() => setCollapse(!collapse)}
-        className="flex items-center justify-between gap-2 rounded-md border-[1px] border-gray-900 px-3"
+        className="flex items-center justify-between gap-2 rounded-md border-[1px] border-gray-900 px-3 py-1"
       >
         <span className="text-sm leading-none">Filters</span>
         <span className="material-icons-outlined">
@@ -117,7 +117,7 @@ const Filter = ({ filters, setFilters }) => {
       </button>
 
       {/* Filters */}
-      <form>{fieldsets}</form>
+      <form className={`overflow-hidden ${collapse ? "h-full opacity-animation" : "h-0"}`}>{fieldsets}</form>
     </div>
   );
 };
