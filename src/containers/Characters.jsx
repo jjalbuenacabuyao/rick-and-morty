@@ -5,13 +5,14 @@ const Characters = () => {
   const sectionTitle = "Characters";
   let [page, setPage] = useState(1);
   let [apiData, setApiData] = useState([]);
+  let [search, setSearch] = useState("")
   let [filters, setFilters] = useState({
     name: "",
     status: "",
     species: "",
     gender: "",
   });
-  let apiURL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${filters.name}&status=${filters.status}&species=${filters.species}&gender=${filters.gender}`;
+  let apiURL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${filters.status}&species=${filters.species}&gender=${filters.gender}`;
 
   useEffect(() => {
     (async function () {
@@ -29,6 +30,7 @@ const Characters = () => {
       apiData={apiData}
       setFilters={setFilters}
       filters={filters}
+      setSearch={setSearch}
     />
   );
 };
