@@ -48,3 +48,17 @@ input[type="search"]::-webkit-search-results-decoration {
   /* Support for IE. */
   font-feature-settings: "liga";
 }
+
+@keyframes opacity-animation {
+  from{
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.opacity-animation {
+  animation: opacity-animation 700ms linear;
+}
