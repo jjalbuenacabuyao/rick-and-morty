@@ -26,7 +26,7 @@ const Filter = ({ filters, setFilters }) => {
   };
 
   const fieldsets = filterTags.map((filter) => (
-    // Map each items in the array and create a fieldset. Inside the fieldset is a paragraph containing and the generated labels from choices object.
+    // Map each items in the array and creates fieldset. Inside the fieldset is a paragraph containing and the generated labels from choices object.
     <fieldset key={filter}>
       <p>{filter}</p>
       {filter === "status"
