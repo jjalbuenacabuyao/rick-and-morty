@@ -1,6 +1,9 @@
 import React from "react";
 
 const Showcase = ({ apiData }) => {
+  const pill = "rounded-full bg-gray-900 px-2 py-[1px] text-[0.625rem] text-gray-50 dark:bg-gray-50 dark:text-gray-900 capitalize";
+  const label = "text-xs leading-none"
+
   return apiData === undefined ? (
     <span className="block text-center">Character doesn't exist</span>
   ) : (
@@ -26,15 +29,21 @@ const Showcase = ({ apiData }) => {
           </div>
 
           {/* Informations */}
-          <div className="flex flex-col gap-2 px-3 py-4">
+          <div className="flex flex-col gap-3 px-3 py-4">
             <p className="text-base font-bold leading-none dark:text-sky-500">{character.name}</p>
-            <p className="text-xs leading-none">
+            <p className={label}>
               Gender:{" "}
-              <span className="rounded-full bg-gray-900 px-2 py-[1px] text-[0.625rem] text-gray-50 dark:bg-gray-50 dark:text-gray-900">
+              <span className={pill}>
                 {character.gender}
               </span>
             </p>
-            <p className="text-xs leading-none">
+            <p className={label}>
+              Species:{" "}
+              <span className={pill}>
+                {character.species}
+              </span>
+            </p>
+            <p className={label}>
               Location: {character.location.name}
             </p>
           </div>
