@@ -5,7 +5,7 @@ const Characters = () => {
   const sectionTitle = "Characters";
   let [page, setPage] = useState(1);
   let [apiData, setApiData] = useState([]);
-  let [search, setSearch] = useState("")
+  let [search, setSearch] = useState("");
   let [filters, setFilters] = useState({
     name: "",
     status: "",
@@ -17,11 +17,10 @@ const Characters = () => {
   useEffect(() => {
     (async function () {
       let response = await fetch(apiURL).then((res) => res.json());
-      let {info, results} = response;
+      let { info, results } = response;
       setApiData(results);
     })();
   }, [apiURL]);
-
 
   return (
     <Box

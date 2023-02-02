@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = ({setSearch }) => {
+const Search = ({ setSearch }) => {
   return (
     <form>
       <label htmlFor="search" className="relative block">
@@ -10,7 +10,7 @@ const Search = ({setSearch }) => {
           name="search"
           id="search"
           placeholder="Search"
-          className="relative w-full rounded-full border-2 bg-transparent border-gray-500 dark:border-sky-400 py-2 px-4 text-sm focus:border-gray-900 focus:outline-none"
+          className="relative w-full rounded-full border-2 border-gray-500 bg-transparent py-2 px-4 text-sm focus:border-gray-900 focus:outline-none dark:border-sky-400"
           autoComplete="off"
           onChange={(e) => {
             setSearch(e.target.value);

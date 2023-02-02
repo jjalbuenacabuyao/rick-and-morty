@@ -1,8 +1,9 @@
 import React from "react";
 
 const Showcase = ({ apiData }) => {
-  const pill = "rounded-full bg-gray-900 px-2 py-[1px] text-[0.625rem] text-gray-50 dark:bg-gray-50 dark:text-gray-900 capitalize";
-  const label = "text-xs leading-none capitalize"
+  const pill =
+    "rounded-full bg-gray-900 px-2 py-[1px] text-[0.625rem] text-gray-50 dark:bg-gray-50 dark:text-gray-900 capitalize";
+  const label = "text-xs leading-none capitalize";
 
   return apiData === undefined ? (
     <span className="block text-center">Character's gone missing, broh.</span>
@@ -12,7 +13,7 @@ const Showcase = ({ apiData }) => {
         // Main Container
         <div
           key={character.id}
-          className="rounded-md border-[1px] border-gray-700 text-sm overflow-hidden"
+          className="overflow-hidden rounded-md border-[1px] border-gray-700 text-sm"
         >
           {/* Image and Status */}
           <div className="relative">
@@ -39,24 +40,21 @@ const Showcase = ({ apiData }) => {
 
             {/* Gender */}
             <p className={label}>
-              Gender:{" "}
-              <span className={pill}>
-                {character.gender}
-              </span>
+              Gender: <span className={pill}>{character.gender}</span>
             </p>
 
             {/* Species */}
             <p className={label}>
               Species:{" "}
               <span className={pill}>
-                {character.species === "Mythological Creature" ? `Mythological` : character.species}
+                {character.species === "Mythological Creature"
+                  ? `Mythological`
+                  : character.species}
               </span>
             </p>
 
             {/* Location */}
-            <p className={label}>
-              Location: {character.location.name}
-            </p>
+            <p className={label}>Location: {character.location.name}</p>
           </div>
         </div>
       ))}
