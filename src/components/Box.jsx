@@ -10,7 +10,7 @@ const Box = ({title, setPage, apiData, filters, setFilters, setSearch}) => {
         <Search setSearch={setSearch}/>
 
         <div>
-          <Filter setFilters={setFilters} />
+          <Filter filters={filters} setFilters={setFilters}/>
           <Showcase apiData={apiData} filters={filters} />
         </div>
       </div>
