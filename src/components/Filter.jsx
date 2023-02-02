@@ -40,6 +40,7 @@ const Filter = ({ filters, setFilters }) => {
               <span>{status}</span>
               <input
                 type="radio"
+                className="hidden"
                 name={filter}
                 value={status}
                 onChange={(e) => {
@@ -62,6 +63,7 @@ const Filter = ({ filters, setFilters }) => {
               <span>{gender}</span>
               <input
                 type="radio"
+                className="hidden"
                 name={filter}
                 value={gender}
                 onChange={(e) => {
@@ -83,6 +85,7 @@ const Filter = ({ filters, setFilters }) => {
               <span>{species}</span>
               <input
                 type="radio"
+                className="hidden"
                 name={filter}
                 value={species}
                 onChange={(e) => {
