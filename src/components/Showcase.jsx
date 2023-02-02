@@ -5,7 +5,7 @@ const Showcase = ({ apiData }) => {
   const label = "text-xs leading-none capitalize"
 
   return apiData === undefined ? (
-    <span className="block text-center">Character doesn't exist</span>
+    <span className="block text-center">Character's gone missing, broh.</span>
   ) : (
     <div className="grid grid-cols-2 gap-4">
       {apiData.map((character) => (
