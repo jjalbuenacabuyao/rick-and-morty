@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 const Filter = ({ filters, setFilters }) => {
   const [collapse, setCollapse] = useState(false);
+  const [statusSelected, setStatusSelected] = useState("");
+  const [genderSelected, setGenderSelected] = useState("");
+  const [speciesSelected, setSpeciesSelected] = useState("");
   const filterTags = ["status", "gender", "species"];
   const choices = {
     status: ["alive", "dead", "unknown", "unset"],
@@ -28,36 +31,66 @@ const Filter = ({ filters, setFilters }) => {
       <p>{filter}</p>
       {filter === "status"
         ? choices.status.map((status) => (
-            <label key={status}>
+            <label
+              key={status}
+              className={`${
+                statusSelected === status ? "border-[1px] border-gray-900" : ""
+              }`}
+            >
               <span>{status}</span>
               <input
                 type="radio"
                 name={filter}
                 value={status}
-                onChange={(e) => status === "unset" ? setFilters({...filters}) : setFilters({...filters, status: e.target.value})}
+                onChange={(e) => {
+                  setStatusSelected(e.target.value);
+                  status === "unset"
+                    ? setFilters({ ...filters, status: "" })
+                    : setFilters({ ...filters, status: e.target.value });
+                }}
               />
             </label>
           ))
         : filter === "gender"
         ? choices.gender.map((gender) => (
-            <label key={gender}>
+            <label
+              key={gender}
+              className={`${
+                genderSelected === gender ? "border-[1px] border-gray-900" : ""
+              }`}
+            >
               <span>{gender}</span>
               <input
                 type="radio"
                 name={filter}
                 value={gender}
-                onChange={(e) => gender === "unset" ? setFilters({...filters}) : setFilters({...filters, gender: e.target.value})}
+                onChange={(e) => {
+                  setGenderSelected(e.target.value);
+                  gender === "unset"
+                    ? setFilters({ ...filters, gender: "" })
+                    : setFilters({ ...filters, gender: e.target.value });
+                }}
               />
             </label>
           ))
         : choices.species.map((species) => (
-            <label key={species}>
+            <label
+              key={species}
+              className={`${
+                speciesSelected === species ? "border-[1px] border-gray-900" : ""
+              }`}
+            >
               <span>{species}</span>
               <input
                 type="radio"
                 name={filter}
                 value={species}
-                onChange={(e) => species === "unset" ? setFilters({...filters}) : setFilters({...filters, species:e.target.value})}
+                onChange={(e) => {
+                  setSpeciesSelected(e.target.value);
+                  species === "unset"
+                    ? setFilters({ ...filters, species: "" })
+                    : setFilters({ ...filters, species: e.target.value });
+                }}
               />
             </label>
           ))}
@@ -72,9 +105,9 @@ const Filter = ({ filters, setFilters }) => {
       <button
         aria-expanded={collapse}
         onClick={() => setCollapse(!collapse)}
-        className="flex items-center justify-between gap-2"
+        className="flex items-center justify-between gap-2 rounded-md border-[1px] border-gray-900 px-3"
       >
-        <span className="leading-none">Filters</span>
+        <span className="text-sm leading-none">Filters</span>
         <span className="material-icons-outlined">
           {collapse ? `keyboard_arrow_up` : `keyboard_arrow_down`}
         </span>
