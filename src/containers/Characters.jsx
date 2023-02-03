@@ -30,6 +30,7 @@ const Characters = () => {
       setFilters={setFilters}
       filters={filters}
       setSearch={setSearch}
+      page={page}
     />
   );
 };
