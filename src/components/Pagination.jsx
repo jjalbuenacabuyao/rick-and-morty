@@ -1,7 +1,7 @@
 import React from "react";
 
 const Pagination = ({ page, setPage, pageInfo }) => {
-  const btnClasses = "bg-gray-800 p-[2px] leading-none text-gray-50 dark:bg-gray-300 dark:text-gray-800 rounded-md"
+  const btnClasses = "bg-gray-800 p-[2px] leading-none text-gray-50 dark:bg-gray-500 dark:text-gray-50 rounded-md"
 
   let backButtonDisabled = page == 1 ? true : false;
   let forwardButtonDisabled = page == pageInfo.pages ? true : false;
@@ -10,7 +10,7 @@ const Pagination = ({ page, setPage, pageInfo }) => {
     <div className="flex gap-5 justify-center items-center">
       <button
         onClick={() => setPage(page - 1)}
-        className={`${btnClasses} ${backButtonDisabled ? "bg-gray-500" : ""}`}
+        className={`${btnClasses} ${backButtonDisabled ? "bg-gray-500 dark:bg-gray-800" : ""}`}
         disabled={backButtonDisabled}
       >
         <span className="material-icons">keyboard_arrow_left</span>
@@ -33,7 +33,7 @@ const Pagination = ({ page, setPage, pageInfo }) => {
       </p>
       <button 
         onClick={() => setPage(page + 1)}
-        className={`${btnClasses} ${forwardButtonDisabled ? "bg-gray-500" : ""}`}
+        className={`${btnClasses} ${forwardButtonDisabled ? "bg-gray-500 dark:bg-gray-800" : ""}`}
         disabled={forwardButtonDisabled}
       >
         <span className="material-icons">keyboard_arrow_right</span>
