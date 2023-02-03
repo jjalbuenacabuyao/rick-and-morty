@@ -4,6 +4,7 @@ import Filter from "./Filter";
 import Showcase from "./Showcase";
 import Search from "./Search";
 import Box from "./Box";
+import Pagination from "./Pagination";
 
 export {
   Header,
@@ -11,5 +12,6 @@ export {
   Filter,
   Showcase,
   Search,
-  Box
+  Box,
+  Pagination
 }
