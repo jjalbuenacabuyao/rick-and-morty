@@ -3,7 +3,7 @@ import React from "react";
 const Search = ({ setSearch }) => {
   return (
     <form>
-      <label htmlFor="search" className="relative block">
+      <label htmlFor="search" className="relative block w-[80%] mx-auto">
         <span className="sr-only">Search</span>
         <input
           type="search"
