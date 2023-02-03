@@ -1,4 +1,3 @@
-import { info } from "autoprefixer";
 import React, { useEffect, useState } from "react";
 import { Box } from "../components";
 
