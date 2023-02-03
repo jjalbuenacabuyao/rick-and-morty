@@ -1,7 +1,7 @@
 import React from "react";
 import { Filter, Search, Showcase, Header } from "../components";
 
-const Box = ({ title, setPage, apiData, filters, setFilters, setSearch }) => {
+const Box = ({ title, page, setPage, apiData, filters, setFilters, setSearch }) => {
   return (
     <>
       <Header />
