@@ -14,7 +14,7 @@ const Box = ({
   return (
     <>
       <Header />
-      <div className="flex flex-col gap-6 px-6 pt-28">
+      <div className="flex flex-col gap-6 px-6 pt-28 pb-8">
         <h1 className="text-center text-2xl font-bold text-sky-900 dark:text-sky-400">
           {title}
         </h1>
