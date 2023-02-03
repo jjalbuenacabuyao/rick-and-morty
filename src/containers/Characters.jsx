@@ -1,3 +1,4 @@
+import { info } from "autoprefixer";
 import React, { useEffect, useState } from "react";
 import { Box } from "../components";
 
@@ -13,12 +14,14 @@ const Characters = () => {
     gender: "",
   });
   let apiURL = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${filters.status}&species=${filters.species}&gender=${filters.gender}`;
+  const [pageInfo, setPageInfo] = useState([])
 
   useEffect(() => {
     (async function () {
       let response = await fetch(apiURL).then((res) => res.json());
       let { info, results } = response;
       setApiData(results);
+      setPageInfo(info)
     })();
   }, [apiURL]);
 
@@ -31,6 +34,7 @@ const Characters = () => {
       filters={filters}
       setSearch={setSearch}
       page={page}
+      pageInfo={pageInfo}
     />
   );
 };
