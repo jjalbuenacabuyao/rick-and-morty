@@ -1,16 +1,30 @@
 import React from "react";
 
 const Pagination = ({ page, setPage, pageInfo }) => {
-  const btnClasses = "bg-gray-800 p-[2px] leading-none text-gray-50 dark:bg-gray-500 dark:text-gray-50 rounded-md"
+  const btnClasses =
+    "bg-gray-800 p-[2px] leading-none text-gray-50 dark:bg-gray-500 dark:text-gray-50 rounded-md";
+
+  let noData;
+
+  if (pageInfo === undefined) {
+    pageInfo = { pages: 42 };
+    noData = true;
+  }
 
   let backButtonDisabled = page == 1 ? true : false;
   let forwardButtonDisabled = page == pageInfo.pages ? true : false;
 
   return (
-    <div className="flex gap-5 justify-center items-center">
+    <div
+      className={`flex items-center justify-center gap-5 ${
+        noData ? "hidden" : ""
+      }`}
+    >
       <button
         onClick={() => setPage(page - 1)}
-        className={`${btnClasses} ${backButtonDisabled ? "bg-gray-500 dark:bg-gray-800" : ""}`}
+        className={`${btnClasses} ${
+          backButtonDisabled ? "bg-gray-500 dark:bg-gray-800" : ""
+        }`}
         disabled={backButtonDisabled}
       >
         <span className="material-icons">keyboard_arrow_left</span>
@@ -26,14 +40,18 @@ const Pagination = ({ page, setPage, pageInfo }) => {
             min={1}
             max={pageInfo.pages}
             onChange={(e) => setPage(e.target.value)}
-            className={`${pageInfo.pages > 9 ? "w-7" : "w-6"} pl-[6px] rounded-md bg-transparent border-[1px] border-sky-400`}
+            className={`${
+              pageInfo.pages > 9 ? "w-7" : "w-6"
+            } rounded-md border-[1px] border-sky-400 bg-transparent pl-[6px]`}
           />{" "}
           of {pageInfo.pages}
         </label>
       </p>
-      <button 
+      <button
         onClick={() => setPage(page + 1)}
-        className={`${btnClasses} ${forwardButtonDisabled ? "bg-gray-500 dark:bg-gray-800" : ""}`}
+        className={`${btnClasses} ${
+          forwardButtonDisabled ? "bg-gray-500 dark:bg-gray-800" : ""
+        }`}
         disabled={forwardButtonDisabled}
       >
         <span className="material-icons">keyboard_arrow_right</span>
