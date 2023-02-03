@@ -16,6 +16,9 @@ module.exports = {
       },
       margin: {
         "36-140": "clamp(2.25rem, -0.039rem + 9.77vw, 8.75rem)"
+      },
+      padding: {
+        "36-140": "clamp(2.25rem, -0.039rem + 9.77vw, 8.75rem)"
       }
     },
   },
