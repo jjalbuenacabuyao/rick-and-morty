@@ -8,7 +8,7 @@ const Showcase = ({ apiData }) => {
   return apiData === undefined ? (
     <span className="block text-center">Character's gone missing, broh.</span>
   ) : (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       {apiData.map((character) => (
         // Main Container
         <div
