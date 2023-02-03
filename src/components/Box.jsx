@@ -1,7 +1,16 @@
 import React from "react";
-import { Filter, Search, Showcase, Header } from "../components";
+import { Filter, Search, Showcase, Header, Pagination } from "../components";
 
-const Box = ({ title, page, setPage, apiData, filters, setFilters, setSearch }) => {
+const Box = ({
+  title,
+  page,
+  setPage,
+  apiData,
+  filters,
+  setFilters,
+  setSearch,
+  pageInfo
+}) => {
   return (
     <>
       <Header />
@@ -11,10 +20,11 @@ const Box = ({ title, page, setPage, apiData, filters, setFilters, setSearch }) 
         </h1>
         <Search setSearch={setSearch} />
 
-        <div className="flex flex-col gap-6">
-          <Filter filters={filters} setFilters={setFilters} />
-          <Showcase apiData={apiData} filters={filters} />
-        </div>
+        <Filter filters={filters} setFilters={setFilters} />
+
+        <Showcase apiData={apiData} filters={filters} />
+
+        <Pagination page={page} setPage={setPage} pageInfo={pageInfo}/>
       </div>
     </>
   );
