@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = ({ setSearch }) => {
+const Search = ({ setSearch, setPage }) => {
   return (
     <form>
       <label htmlFor="search" className="relative block w-[80%] mx-auto">
@@ -14,6 +14,7 @@ const Search = ({ setSearch }) => {
           autoComplete="off"
           onChange={(e) => {
             setSearch(e.target.value);
+            setPage(1);
           }}
         />
         <span className="material-icons absolute right-4 top-0 bottom-0 my-auto aspect-square w-6 leading-none text-gray-600 dark:text-gray-200">
