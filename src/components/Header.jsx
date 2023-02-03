@@ -45,7 +45,7 @@ const Header = () => {
   ));
 
   return (
-    <header className="absolute right-0 left-0 top-0 mx-auto mx-36-140 mt-6 flex max-w-screen-2xl items-center justify-between gap-2">
+    <header className="absolute right-0 left-0 top-0 mx-36-140 mt-6 flex max-w-screen-2xl items-center justify-between gap-2 2xl:mx-auto">
       <div className="flex w-full items-center justify-between">
         <Link to={"/"}>
           <p className="font-schwifty text-lg">
