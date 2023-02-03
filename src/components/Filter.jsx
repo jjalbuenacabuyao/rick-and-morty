@@ -8,7 +8,7 @@ const Filter = ({ filters, setFilters }) => {
   const filterTags = ["status", "gender", "species"];
   const choices = {
     status: ["alive", "dead", "unknown", "none"],
-    gender: ["male", "female", "unknown", "none"],
+    gender: ["male", "female", "unknown", "genderless", "none"],
     species: [
       "human",
       "alien",
