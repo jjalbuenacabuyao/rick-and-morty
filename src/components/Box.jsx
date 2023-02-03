@@ -18,7 +18,7 @@ const Box = ({
         <h1 className="text-center text-2xl font-bold text-sky-900 dark:text-sky-400">
           {title}
         </h1>
-        <Search setSearch={setSearch} />
+        <Search setSearch={setSearch} setPage={setPage}/>
 
         <Filter filters={filters} setFilters={setFilters} />
 
