@@ -27,8 +27,8 @@ const Hero = () => {
   ));
 
   return (
-    <article className="flex h-screen flex-col items-center justify-center gap-4 px-6">
-      <h1 className="px-2 text-center text-4xl font-bold leading-[1.2em]">
+    <article className="flex h-screen flex-col items-center justify-center gap-16-24 px-6">
+      <h1 className="px-2 text-center text-36-72 font-bold leading-[1.2em]">
         Rick and Morty Wiki
       </h1>
       <p>
