@@ -2,9 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const currentTheme = document.documentElement.classList.contains("dark")
-    ? "dark"
-    : "light";
+  let currentTheme;
+
+  if (window.localStorage.getItem("darkmode") === "enabled") {
+    currentTheme = "dark";
+  } else {
+    currentTheme = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
+  }
+
   const [theme, setTheme] = useState(currentTheme);
   const [open, setOpen] = useState(false);
   const iconClass = `material-icons-outlined ${
@@ -45,7 +52,7 @@ const Header = () => {
   ));
 
   return (
-    <header className="absolute right-0 left-0 top-0 px-36-140 pt-6 flex max-w-screen-2xl items-center justify-between gap-2 2xl:m-auto">
+    <header className="absolute right-0 left-0 top-0 flex max-w-screen-2xl items-center justify-between gap-2 px-36-140 pt-6 2xl:m-auto">
       <div className="flex w-full items-center justify-between">
         <Link to={"/"}>
           <p className="font-schwifty text-lg">
