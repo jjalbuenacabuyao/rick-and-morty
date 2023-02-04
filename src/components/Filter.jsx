@@ -32,7 +32,8 @@ const Filter = ({ filters, setFilters }) => {
       className="flex flex-wrap items-center gap-3 capitalize"
     >
       <p className="text-base font-bold leading-none">{filter}:</p>
-      {filter === "status"
+      {//map every items in status
+      filter === "status"
         ? choices.status.map((status) => (
             <label
               key={status}
@@ -57,6 +58,7 @@ const Filter = ({ filters, setFilters }) => {
               />
             </label>
           ))
+          //map every items in gender
         : filter === "gender"
         ? choices.gender.map((gender) => (
             <label
@@ -82,6 +84,7 @@ const Filter = ({ filters, setFilters }) => {
               />
             </label>
           ))
+          //map every items in species
         : choices.species.map((species) => (
             <label
               key={species}
