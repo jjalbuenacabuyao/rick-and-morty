@@ -23,7 +23,7 @@ const Characters = () => {
       setPageInfo(info)
     })();
   }, [apiURL]);
-
+//todo : use useContext
   return (
     <Box
       title={sectionTitle}
