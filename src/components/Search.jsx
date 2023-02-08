@@ -2,7 +2,7 @@ import React from "react";
 
 const Search = ({ setSearch, setPage }) => {
   return (
-    <form>
+    <form className="lg:col-span-2">
       <label htmlFor="search" className="relative block w-[80%] mx-auto">
         <span className="sr-only">Search</span>
         <input
