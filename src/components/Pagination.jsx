@@ -41,7 +41,7 @@ const Pagination = ({ page, setPage, pageInfo }) => {
             max={pageInfo.pages}
             onChange={(e) => setPage(e.target.value)}
             className={`${
-              pageInfo.pages > 9 ? "w-7" : "w-6"
+              pageInfo.pages > 9 ? "w-9" : "w-5"
             } rounded-md border-[1px] border-sky-400 bg-transparent pl-[6px]`}
           />{" "}
           of {pageInfo.pages}
