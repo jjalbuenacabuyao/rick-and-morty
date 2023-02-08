@@ -29,7 +29,7 @@ const Filter = ({ filters, setFilters }) => {
     // Map each items in the array and creates fieldset. Inside the fieldset is a paragraph containing and the generated labels from choices object.
     <fieldset
       key={filter}
-      className="flex flex-wrap items-center gap-3 capitalize text-sm"
+      className="flex flex-wrap items-center gap-3 capitalize text-sm xl:text-base"
     >
       <p className="text-base font-bold leading-none">{filter}:</p>
       {
