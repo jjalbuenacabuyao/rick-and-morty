@@ -18,7 +18,7 @@ const Pagination = ({ page, setPage, pageInfo }) => {
     <div
       className={`flex items-center justify-center gap-5 ${
         noData ? "hidden" : ""
-      }`}
+      } lg:col-start-2`}
     >
       <button
         onClick={() => setPage(page - 1)}
