@@ -81,7 +81,7 @@ const Header = () => {
           open ? "translate-x-0" : "translate-x-full"
         } md:static md:transform-none md:dark:bg-transparent md:bg-transparent md:pl-3 md:backdrop-blur-none`}
       >
-        <ul className="pt-32 pl-10 flex flex-col gap-6 md:p-0 md:flex-row">{listItems}</ul>
+        <ul className="pt-32 pl-10 flex flex-col gap-6 md:p-0 md:flex-row md:justify-center">{listItems}</ul>
       </nav>
     </header>
   );
