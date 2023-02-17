@@ -35,7 +35,7 @@ const Episodes = () => {
         <h1 className="text-center text-2xl font-bold text-sky-900 dark:text-sky-400 md:text-3xl lg:col-span-2 lg:text-4xl">
           Episodes
         </h1>
-        <Search setSearch={search} setPage={setPage} />
+        <Search setSearch={setSearch} setPage={setPage} />
         {episodeCard}
       </main>
     </>
