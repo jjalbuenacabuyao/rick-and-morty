@@ -5,6 +5,7 @@ const Episodes = () => {
   let [page, setPage] = useState(1);
   let [apiData, setApiData] = useState([]);
   let [search, setSearch] = useState("");
+  let [expanded, setExpanded] = useState(false);
   let apiURL = `https://rickandmortyapi.com/api/episode/?name=${search}`;
   const [pageInfo, setPageInfo] = useState([]);
 
@@ -18,14 +19,25 @@ const Episodes = () => {
   }, [apiURL]);
 
   let episodeCard = apiData.map((episode) => (
-    <div
+    <li
       key={episode.id}
-      className="rounded-lg border-[1px] border-gray-600 p-3 text-xs dark:border-gray-500"
+      aria-expanded={expanded}
+      className="cursor-pointer rounded-lg border-[1px] border-gray-600 p-3 text-xs dark:border-gray-500"
+      onClick={() => setExpanded(!expanded) }
     >
-      <h2 className="text-lg">{episode.name}</h2>
-      <p>{episode.episode}</p>
-      <p>{episode.air_date}</p>
-    </div>
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-lg">{episode.name}</h2>
+          <p>{episode.episode}</p>
+          <p>{episode.air_date}</p>
+        </div>
+
+        {/* Expand More icon */}
+        <div>
+          <span className="material-icons-outlined">expand_more</span>
+        </div>
+      </div>
+    </li>
   ));
 
   return (
@@ -36,7 +48,7 @@ const Episodes = () => {
           Episodes
         </h1>
         <Search setSearch={setSearch} setPage={setPage} />
-        {episodeCard}
+        <ul className="flex flex-col gap-6">{episodeCard}</ul>
       </main>
     </>
   );
